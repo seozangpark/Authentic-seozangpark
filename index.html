@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEO ZANG PARK™ | Premium Art & Web Solutions</title>
+    <!-- Ultra Luxury Fonts: Playfair Display for Headings, Lato for clean smooth text -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- SECTION 1: HERO & BRANDING -->
+    <section class="section-hero">
+        <h1 class="brand-title">SEO ZANG PARK™</h1>
+        <div class="hero-image-container">
+            <!-- 16:9 Ratio Hero Image -->
+            <img src="hero.jpg" alt="Seo Zang Park Hero" class="hero-image" draggable="false">
+        </div>
+    </section>
+
+    <!-- SECTION 2: ABOUT US -->
+    <section class="section-about">
+        <h2 class="section-heading">About Us</h2>
+        <p class="premium-text">
+            I am an artist, a professional website developer, and a designer. I create exquisitely handcrafted pencil sketch artworks and leverage advanced AI to build high-end, bespoke websites—just like the one you are experiencing right now. Below, you will find intuitive options to place orders tailored strictly to your requirements. We invite you to give us an opportunity to serve you; our ultimate goal is to deliver the most precise, perfect, and elegant solutions directly to you.
+        </p>
+    </section>
+
+    <!-- SECTION 3: QUICK NAVIGATION BUTTONS -->
+    <section class="section-nav-buttons">
+        <a href="#order-art-section" class="btn-luxury gold-btn">Order Artworks</a>
+        <a href="#order-web-section" class="btn-luxury blue-btn">Order Websites</a>
+    </section>
+
+    <!-- SECTION 4: ETHNIC PORTFOLIO -->
+    <section class="section-portfolio">
+        <h2 class="section-heading">Ethnic Portfolio</h2>
+        <div class="portfolio-grid">
+            <div class="portfolio-item">
+                <img src="image1.jpg" alt="Handmade Art 1" class="square-img" draggable="false">
+                <p>Our Handmade Arts</p>
+            </div>
+            <div class="portfolio-item">
+                <img src="image2.jpg" alt="Handmade Art 2" class="square-img" draggable="false">
+                <p>Our Handmade Arts</p>
+            </div>
+            <div class="portfolio-item">
+                <img src="image3.jpg" alt="Handmade Art 3" class="square-img" draggable="false">
+                <p>Our Handmade Arts</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 5: WHY CHOOSE US -->
+    <section class="section-features">
+        <h2 class="section-heading">Why Choose Us</h2>
+        <ul class="features-list">
+            <li><strong>Purpose-Driven Design:</strong> We build custom websites strictly tailored to your requirements, designed specifically to solve your real-life problems efficiently.</li>
+            <li><strong>Cultural Essence:</strong> We create fully handmade artworks using traditional wooden pencils, deeply reflecting and connecting with our rich culture and heritage.</li>
+            <li><strong>Uncompromised Privacy & UI:</strong> We prioritize your privacy and ensure our digital interfaces are highly secure, smooth, and user-friendly.</li>
+            <li><strong>Accessible Luxury:</strong> We provide all these premium services at an incredibly affordable price—costing no more than a single movie ticket!</li>
+        </ul>
+    </section>
+
+    <!-- SECTION 6: ORDERS AREA -->
+    <section class="section-orders">
+        <h2 class="section-heading">Orders Area</h2>
+
+        <!-- Artwork Order Card -->
+        <div class="order-card" id="order-art-section">
+            <button class="accordion-btn" onclick="toggleAccordion('art-form-wrapper', this)">ORDER ARTWORKS</button>
+            <div class="accordion-content" id="art-form-wrapper">
+                <p class="cost-highlight">EACH CUSTOM SKETCH EST COST : 199₹ INR</p>
+                <form id="art-form" onsubmit="submitArtForm(event)">
+                    <input type="text" name="Name" placeholder="Name" required>
+                    <input type="email" name="Email" placeholder="Email" required>
+                    <input type="tel" name="WhatsApp Number" placeholder="WhatsApp Number" required>
+                    
+                    <label class="file-label">Upload Your High Quality Image:</label>
+                    <input type="file" name="image" accept="image/*" required>
+                    
+                    <div class="payment-info">
+                        <p><strong>My UPI:</strong> your-upi-id@bank</p>
+                        <img src="qr.jpg" alt="QR Code" class="qr-code" draggable="false">
+                    </div>
+                    
+                    <input type="text" name="Transaction ID or Name" placeholder="Transaction ID / Payment Name" required>
+                    
+                    <button type="submit" class="submit-btn" id="art-submit-btn">Submit Order</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Website Order Card -->
+        <div class="order-card" id="order-web-section">
+            <button class="accordion-btn" onclick="toggleAccordion('web-form-wrapper', this)">ORDER WEBSITES</button>
+            <div class="accordion-content" id="web-form-wrapper">
+                <p class="cost-highlight">EACH CUSTOM WEBSITE EST COST : 999₹ INR MIN</p>
+                <form id="web-form" onsubmit="submitWebForm(event)">
+                    <input type="text" name="Name" placeholder="Name" required>
+                    <input type="text" name="Business" placeholder="Business Name" required>
+                    <input type="tel" name="WhatsApp Number" placeholder="WhatsApp Number" required>
+                    <input type="email" name="Email" placeholder="Email" required>
+                    <input type="tel" name="2nd Number" placeholder="2nd Number (Optional)">
+                    
+                    <div class="payment-info">
+                        <p><strong>My UPI:</strong> your-upi-id@bank</p>
+                        <img src="qr.jpg" alt="QR Code" class="qr-code" draggable="false">
+                    </div>
+                    
+                    <input type="text" name="Transaction ID or Name" placeholder="Transaction ID / Payment Name" required>
+                    <textarea name="Website Requirements Description" rows="5" placeholder="Describe your website requirements here..." required></textarea>
+                    
+                    <button type="submit" class="submit-btn" id="web-submit-btn">Submit Order</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 7: FOOTER & CONTACT -->
+    <footer class="main-footer">
+        <h2 class="section-heading">Contact Us</h2>
+        <div class="contact-details">
+            <p><strong>Phone:</strong> +91 92352 34325</p>
+            <p><strong>YouTube:</strong> SEO ZANG PARK</p>
+            <p><strong>Instagram:</strong> @seo_zang_park</p>
+            <p><strong>Email:</strong> asliadkashif84@gmail.com</p>
+            <p><strong>Location:</strong> Hazratganj Lucknow, India</p>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2026 SEO ZANG PARK™. All Rights Reserved. Ownership strictly protected.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,335 @@
+/* --- VARIABLES & RESET --- */
+:root {
+    --bg-gradient: linear-gradient(135deg, #e3eaf5 0%, #c4d4e6 100%); /* Silverish Lightblue */
+    --matte-black: #1a1a1a;
+    --gold: #d4af37;
+    --brown: #8b5a2b;
+    --blue: #1a4f8b;
+    --silver: #c0c0c0;
+    --white: #ffffff;
+    --royal-font: 'Playfair Display', serif;
+    --smooth-font: 'Lato', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--bg-gradient);
+    color: var(--matte-black);
+    font-family: var(--smooth-font);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* --- TYPOGRAPHY & HEADINGS --- */
+.brand-title {
+    font-family: var(--royal-font);
+    font-size: 3.5rem;
+    text-align: center;
+    color: var(--matte-black);
+    padding: 40px 20px 20px;
+    letter-spacing: 2px;
+}
+
+.section-heading {
+    font-family: var(--royal-font);
+    font-size: 2.2rem;
+    text-align: center;
+    color: var(--matte-black);
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.section-heading::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: var(--gold);
+    margin: 10px auto 0;
+}
+
+section {
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* --- SECTION 1: HERO --- */
+.hero-image-container {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    border: 3px solid var(--gold);
+}
+
+.hero-image {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    display: block;
+    pointer-events: none;
+}
+
+/* --- SECTION 2: ABOUT US --- */
+.premium-text {
+    font-size: 1.15rem;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    color: var(--matte-black);
+    font-weight: 400;
+}
+
+/* --- SECTION 3: BUTTONS --- */
+.section-nav-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.btn-luxury {
+    display: inline-block;
+    padding: 18px 40px;
+    font-family: var(--royal-font);
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+}
+
+.gold-btn {
+    background: var(--gold);
+    color: var(--white);
+    border: 2px solid var(--gold);
+}
+.gold-btn:hover {
+    background: transparent;
+    color: var(--gold);
+}
+
+.blue-btn {
+    background: var(--blue);
+    color: var(--white);
+    border: 2px solid var(--blue);
+}
+.blue-btn:hover {
+    background: transparent;
+    color: var(--blue);
+}
+
+/* --- SECTION 4: PORTFOLIO --- */
+.portfolio-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.portfolio-item {
+    text-align: center;
+    background: var(--white);
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+    border-bottom: 4px solid var(--brown);
+}
+
+.square-img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+    pointer-events: none;
+    margin-bottom: 15px;
+}
+
+.portfolio-item p {
+    font-family: var(--royal-font);
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--matte-black);
+}
+
+/* --- SECTION 5: FEATURES --- */
+.features-list {
+    max-width: 800px;
+    margin: 0 auto;
+    list-style: none;
+}
+
+.features-list li {
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    background: var(--white);
+    padding: 20px;
+    border-left: 5px solid var(--gold);
+    border-radius: 0 8px 8px 0;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.features-list strong {
+    font-family: var(--royal-font);
+    color: var(--brown);
+    font-size: 1.2rem;
+}
+
+/* --- SECTION 6: ORDERS AREA (ACCORDION) --- */
+.order-card {
+    background: var(--white);
+    border-radius: 12px;
+    margin-bottom: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    overflow: hidden;
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+.accordion-btn {
+    width: 100%;
+    background: var(--silver);
+    color: var(--matte-black);
+    padding: 25px;
+    font-family: var(--royal-font);
+    font-size: 1.5rem;
+    font-weight: 700;
+    border: none;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.4s ease;
+}
+
+.accordion-btn.active, .accordion-btn:hover {
+    background: var(--gold);
+    color: var(--white);
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.6s ease-out;
+    background: var(--white);
+    padding: 0 30px;
+}
+
+.cost-highlight {
+    text-align: center;
+    font-family: var(--royal-font);
+    font-size: 1.3rem;
+    color: var(--blue);
+    font-weight: 700;
+    margin: 25px 0;
+}
+
+/* Forms */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding-bottom: 30px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid var(--silver);
+    border-radius: 6px;
+    font-family: var(--smooth-font);
+    font-size: 1rem;
+    background: #f9f9f9;
+    color: var(--matte-black);
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    border-color: var(--gold);
+    box-shadow: 0 0 5px rgba(212, 175, 55, 0.3);
+}
+
+.file-label {
+    font-weight: 700;
+    color: var(--brown);
+    margin-top: 10px;
+}
+
+.payment-info {
+    text-align: center;
+    margin: 20px 0;
+    padding: 20px;
+    border: 2px dashed var(--gold);
+    border-radius: 8px;
+}
+
+.qr-code {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    margin-top: 15px;
+    border: 2px solid var(--matte-black);
+    pointer-events: none;
+}
+
+.submit-btn {
+    background: var(--blue);
+    color: var(--white);
+    padding: 18px;
+    font-family: var(--royal-font);
+    font-size: 1.3rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
+    margin-top: 10px;
+}
+
+.submit-btn:hover {
+    background: var(--matte-black);
+}
+
+/* --- SECTION 7: FOOTER --- */
+.main-footer {
+    background: var(--matte-black);
+    color: var(--white);
+    padding: 60px 20px 20px;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.main-footer .section-heading {
+    color: var(--gold);
+}
+
+.contact-details p {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.contact-details strong {
+    color: var(--gold);
+}
+
+.copyright {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    font-size: 0.9rem;
+    color: var(--silver);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .brand-title { font-size: 2.5rem; }
+    .square-img { width: 100%; height: auto; aspect-ratio: 1/1; }
+    .accordion-btn { font-size: 1.2rem; padding: 20px; }
+}
